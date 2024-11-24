@@ -1,7 +1,9 @@
 ## 简介
 mac顶部菜单栏展示加密货币实时价格。
 
-效果图: ![](./images/demo.png)
+效果图: 
+
+![](./images/demo.png)
 
 ## 快速入门
 1. 安装golang开发环境
@@ -10,7 +12,7 @@ brew install golang
 ```
 2. 下载项目
 ```bash
-git clone https://github.com/xueyuanl/crypto-price-mac-menu.git
+git clone https://github.com/pokitpeng/crypto-price.git
 ```
 3. 运行项目
 ```bash
