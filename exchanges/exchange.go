@@ -19,12 +19,14 @@ var (
 const (
 	ExchangeBinance = "Binance"
 	// ExchangeOKX     = "OKX"
-	ExchangeXT = "XT"
+	ExchangeXT     = "XT"
+	ExchangeBitget = "Bitget"
 )
 
 func RegisterExchanges(proxyURL string) {
 	AvailableExchanges[ExchangeBinance] = NewBinance(proxyURL)
 	AvailableExchanges[ExchangeXT] = NewXT(proxyURL)
+	AvailableExchanges[ExchangeBitget] = NewBitget(proxyURL)
 }
 
 // 创建带代理的 HTTP 客户端

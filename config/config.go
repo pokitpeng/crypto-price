@@ -66,6 +66,7 @@ func createDefaultConfig() (*Config, error) {
 			{Symbol: "BTC", Name: "BTC-Binance", Exchange: exchanges.ExchangeBinance, Displayed: true},
 			{Symbol: "ETH", Name: "ETH-Binance", Exchange: exchanges.ExchangeBinance, Displayed: false},
 			{Symbol: "DOGE", Name: "DOGE-Binance", Exchange: exchanges.ExchangeBinance, Displayed: false},
+			{Symbol: "GRASS", Name: "GRASS-Bitget", Exchange: exchanges.ExchangeBitget, Displayed: false},
 			{Symbol: "TRUMP", Name: "TRUMP-XT", Exchange: exchanges.ExchangeXT, Displayed: false},
 			{Symbol: "EIGEN", Name: "EIGEN-XT", Exchange: exchanges.ExchangeXT, Displayed: false},
 		},
