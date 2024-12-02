@@ -18,13 +18,14 @@ var (
 
 const (
 	ExchangeBinance = "Binance"
-	// ExchangeOKX     = "OKX"
-	ExchangeXT     = "XT"
-	ExchangeBitget = "Bitget"
+	ExchangeOKX     = "OKX"
+	ExchangeBitget  = "Bitget"
+	ExchangeXT      = "XT"
 )
 
 func RegisterExchanges(proxyURL string) {
 	AvailableExchanges[ExchangeBinance] = NewBinance(proxyURL)
+	AvailableExchanges[ExchangeOKX] = NewOkx(proxyURL)
 	AvailableExchanges[ExchangeXT] = NewXT(proxyURL)
 	AvailableExchanges[ExchangeBitget] = NewBitget(proxyURL)
 }

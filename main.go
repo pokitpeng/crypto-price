@@ -58,7 +58,9 @@ func (app *App) setupMenu() {
 	// 添加代币选择菜单
 	tokenMenu := systray.AddMenuItem("选择显示代币", "")
 	for _, token := range app.config.Tokens {
-		menuItem := tokenMenu.AddSubMenuItem(token.Name, "")
+		// 获取当前价格并格式化菜单项文本
+		menuText := fmt.Sprintf("%s ($%.2f)", token.Name, token.Price)
+		menuItem := tokenMenu.AddSubMenuItem(menuText, "")
 		app.tokens[token.Symbol] = menuItem
 		if token.Symbol == app.config.ActiveToken {
 			menuItem.Check()
@@ -138,8 +140,13 @@ func (app *App) updatePrice() {
 			}
 			app.config.Tokens[i].Price = price
 
+			// 更新菜单项文本
+			if menuItem, ok := app.tokens[token.Symbol]; ok {
+				menuItem.SetTitle(fmt.Sprintf("%s ($%.3f)", token.Name, price))
+			}
+
 			if token.Symbol == app.config.ActiveToken {
-				systray.SetTitle(fmt.Sprintf("%s $%.2f", token.Symbol, price))
+				systray.SetTitle(fmt.Sprintf("%s $%.3f", token.Symbol, price))
 			}
 		}
 	}
